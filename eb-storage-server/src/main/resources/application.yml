@@ -1,0 +1,12 @@
+
+
+spring:
+  application:
+    name: eb-storage-server
+server:
+  port: 8003
+eureka:
+  client:
+    service-url:
+        defaultZone: http://127.0.0.1:8000/eureka/
+
