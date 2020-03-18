@@ -18,12 +18,12 @@ public @interface Log {
      *
      * @return
      */
-    public String title() default "";
+     String title() default "";
 
     /**
      * 操作类型
      *
      * @return
      */
-    public BusinessType businessType() default BusinessType.OTHER;
+     BusinessType businessType() default BusinessType.OTHER;
 }
