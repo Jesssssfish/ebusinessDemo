@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      name: ebConfig
+      profile: test
+      label: master
+      discovery:
+        enabled: true
+        service-id: eb-config-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8000/eureka/

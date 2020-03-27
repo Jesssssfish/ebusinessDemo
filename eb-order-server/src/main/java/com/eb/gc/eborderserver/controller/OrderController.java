@@ -7,6 +7,7 @@ import com.eb.gc.eborderserver.service.AccumulateService;
 import com.eb.gc.eborderserver.service.InventoryService;
 import com.eb.gc.eborderserver.service.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -36,6 +37,12 @@ public class OrderController {
     @Autowired
     AccumulateService accumulateService;
 
+    @Value("${eb.config.test1}")
+    private String test1;
+
+    @Value("${eb.config.test2}")
+    private String test2;
+
     /**
      * 下单
      *
@@ -49,7 +56,9 @@ public class OrderController {
         ResultInfo inventoryRes = inventoryService.cut(id);
         ResultInfo storageRes = storageService.send(id);
         ResultInfo accumulateRes = accumulateService.increase(id);
-        return ResultInfo.success(inventoryRes.getMsg() + " | " + storageRes.getMsg() + " | " + accumulateRes.getMsg());
+        String configMsg = "test1:" + test1 + " && test2:" + test2;
+        return ResultInfo.success(inventoryRes.getMsg() + " | " + storageRes.getMsg() + " | " + accumulateRes.getMsg
+                () + " | " + configMsg);
     }
 
     @Log(title = "新增订单", businessType = BusinessType.ADD)
