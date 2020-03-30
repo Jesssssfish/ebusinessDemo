@@ -1,0 +1,4 @@
+eb:
+  config:
+    test1: native-test1
+    test2: native-test2

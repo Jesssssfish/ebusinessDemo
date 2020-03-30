@@ -2,6 +2,6 @@ eb-eureka-server 8000 服务注册与发现中心
 eb-accumulate-server 8001 积分服务
 eb-inventory-server 8002 库存服务
 eb-storage-server 8003 仓储服务
-eb-order-server 8004 订单服务
+eb-order-server 8004 订单服务 copy 2 node 8007 8008
 eb-zuul-server 8005 服务网关
 eb-config-server 8006 配置中心

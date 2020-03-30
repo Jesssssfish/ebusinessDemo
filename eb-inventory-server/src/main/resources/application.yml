@@ -2,10 +2,11 @@
 spring:
   application:
     name: eb-inventory-server
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
 server:
   port: 8002
-eureka:
-  client:
-    service-url:
-        defaultZone: http://127.0.0.1:8000/eureka/
 

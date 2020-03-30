@@ -8,6 +8,7 @@ import com.eb.gc.eborderserver.service.InventoryService;
 import com.eb.gc.eborderserver.service.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/order")
+@RefreshScope
 public class OrderController {
 
     /**
